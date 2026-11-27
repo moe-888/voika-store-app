@@ -1,0 +1,13 @@
+{
+  "name": "pocket-agent",
+  "version": "1.0.0",
+  "description": "Your own private coding agent: runs on your computer with a free local model (Ollama), controlled from your phone.",
+  "main": "server.js",
+  "bin": { "pocket-agent": "server.js" },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test/e2e.js"
+  },
+  "engines": { "node": ">=18" },
+  "license": "MIT"
+}

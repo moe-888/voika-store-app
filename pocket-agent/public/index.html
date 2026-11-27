@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+  <meta name="theme-color" content="#14161a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="stylesheet" href="style.css">
+  <title>Pocket Agent</title>
+</head>
+<body>
+  <!-- Login -->
+  <section id="login" class="login hidden">
+    <form id="loginForm" class="login-box">
+      <img src="icon.svg" alt="" width="56" height="56">
+      <h1>Pocket Agent</h1>
+      <p class="muted">Your private coding agent</p>
+      <input id="password" type="password" placeholder="Password" autocomplete="current-password" required>
+      <button type="submit" class="primary">Log in</button>
+      <p id="loginError" class="error"></p>
+    </form>
+  </section>
+
+  <!-- App -->
+  <section id="app" class="app hidden">
+    <aside id="drawer" class="drawer">
+      <div class="drawer-head">
+        <strong>Chats</strong>
+        <button id="closeDrawer" class="icon" aria-label="Close">✕</button>
+      </div>
+      <form id="newChatForm" class="new-chat">
+        <input id="newFolder" placeholder="Folder (empty = default)" autocomplete="off">
+        <button type="submit" class="primary">+ New chat</button>
+      </form>
+      <ul id="sessionList" class="session-list"></ul>
+      <div class="drawer-foot">
+        <label class="toggle"><input type="checkbox" id="autoApprove"> Auto-approve actions</label>
+        <p class="muted small" id="infoLine"></p>
+        <button id="logout" class="link">Log out</button>
+      </div>
+    </aside>
+    <div id="scrim" class="scrim"></div>
+
+    <main class="main">
+      <header class="top">
+        <button id="openDrawer" class="icon" aria-label="Chats">☰</button>
+        <div class="title-wrap">
+          <div id="chatTitle" class="title">Pocket Agent</div>
+          <div id="chatFolder" class="muted small ellipsis"></div>
+        </div>
+        <select id="model" aria-label="Model"></select>
+      </header>
+
+      <div id="banner" class="banner hidden"></div>
+      <div id="messages" class="messages"></div>
+
+      <form id="composer" class="composer">
+        <textarea id="input" rows="1" placeholder="Ask me to read, fix or build something…"></textarea>
+        <button id="sendBtn" type="submit" class="primary send" aria-label="Send">➤</button>
+        <button id="stopBtn" type="button" class="danger send hidden" aria-label="Stop">■</button>
+      </form>
+    </main>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
